@@ -28,7 +28,7 @@
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `available_internship_recommendations_rep`(IN user_date datetime, IN user_student_id int)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `available_internship_recommendations_rep`(IN user_date date, IN user_student_id int)
 BEGIN
 	SELECT ip.program_name AS 'PROGRAM NAME', 
     ip.required_year_level AS 'REQ. YEAR LEVEL',
