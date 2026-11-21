@@ -23,11 +23,11 @@ DROP TABLE IF EXISTS `internship_branch_records`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `internship_branch_records` (
-  `branch_id` int(4) unsigned zerofill NOT NULL,
+  `branch_id` int(4) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `branch_name` varchar(45) NOT NULL,
   `location` varchar(45) NOT NULL,
   PRIMARY KEY (`branch_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,6 +36,7 @@ CREATE TABLE `internship_branch_records` (
 
 LOCK TABLES `internship_branch_records` WRITE;
 /*!40000 ALTER TABLE `internship_branch_records` DISABLE KEYS */;
+INSERT INTO `internship_branch_records` VALUES (0001,'Good Pizza, Great Pizza','Someplace Sometown'),(0002,'Ultimate Talent Execution Branch','Eden\'s Garden Academy'),(0005,'Crash Dummies Inc.','Abandoned Factory N-67');
 /*!40000 ALTER TABLE `internship_branch_records` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-11-09 11:16:02
+-- Dump completed on 2026-11-21 20:51:35
