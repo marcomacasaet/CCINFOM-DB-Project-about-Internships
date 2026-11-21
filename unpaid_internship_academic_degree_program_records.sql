@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `academic_degree_program_records`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `academic_degree_program_records` (
-  `degree_program_id` int(4) unsigned zerofill NOT NULL,
+  `degree_program_id` int(4) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `degree_program_name` varchar(45) NOT NULL,
   `field_id` int DEFAULT NULL,
   PRIMARY KEY (`degree_program_id`)
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-11-09 11:16:01
+-- Dump completed on 2026-11-21 20:51:35
