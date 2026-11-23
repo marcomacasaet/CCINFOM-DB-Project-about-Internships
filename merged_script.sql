@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `academic_degree_program_records`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `academic_degree_program_records` (
   `degree_program_id` int(4) unsigned zerofill NOT NULL AUTO_INCREMENT,
-  `degree_program_name` varchar(45) NOT NULL,
+  `degree_program_name` varchar(100) NOT NULL,
   `field_id` int DEFAULT NULL,
   PRIMARY KEY (`degree_program_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -36,6 +36,17 @@ CREATE TABLE `academic_degree_program_records` (
 
 LOCK TABLES `academic_degree_program_records` WRITE;
 /*!40000 ALTER TABLE `academic_degree_program_records` DISABLE KEYS */;
+INSERT INTO `academic_degree_program_records`
+VALUES (0001,'Bachelor of Science in Computer Science major in Software Technology',1), 
+		(0002,'Bachelor of Science in Information Technology',1), 
+        (0003,'Bachelor of Science in Applied Economics',2), 
+        (0004,'Bachelor of Science in Applied Economics and Data Science',2),
+        (0005,'Bachelor of Arts in Communication Arts',3),
+        (0006,'Bachelor of Science in Business Management',4),
+        (0007,'Bachelor of Science in Accountancy',4),
+        (0008,'Bachelor of Science in Interdisciplinary Business Studies',4),
+        (0009,'Bachelor of Science in Marketing',4),
+        (0010,'Bachelor of Arts in Psychology',5);
 /*!40000 ALTER TABLE `academic_degree_program_records` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -86,6 +97,17 @@ CREATE TABLE `field_of_work_records` (
 
 LOCK TABLES `field_of_work_records` WRITE;
 /*!40000 ALTER TABLE `field_of_work_records` DISABLE KEYS */;
+INSERT INTO `field_of_work_records`
+VALUES (0001, "Computer Science"),
+		(0002, "Economics"),
+        (0003, "Communication"),
+        (0004, "Business"),
+        (0005, "Psychology"),
+        (0006, "Chemical Engineering"),
+        (0007, "Aerospace"),
+        (0008, "Sports"),
+        (0009, "Architecture"),
+        (0010, "Culinary");
 /*!40000 ALTER TABLE `field_of_work_records` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -137,7 +159,17 @@ CREATE TABLE `internship_branch_records` (
 
 LOCK TABLES `internship_branch_records` WRITE;
 /*!40000 ALTER TABLE `internship_branch_records` DISABLE KEYS */;
-INSERT INTO `internship_branch_records` VALUES (0001,'Good Pizza, Great Pizza','Someplace Sometown'),(0002,'Ultimate Talent Execution Branch','Eden\'s Garden Academy'),(0005,'Crash Dummies Inc.','Abandoned Factory N-67');
+INSERT INTO `internship_branch_records` 
+VALUES (0001,'Good Pizza, Great Pizza','Someplace Sometown'),
+		(0002,'Ultimate Talent Execution Branch','Eden\'s Garden Academy'),
+        (0003, 'Accenture, Inc. Makati Branch', 'MSE Building, Ayala Avenue, Makati City'),
+        (0004, 'Bank of the Philippine Islands Head Office', 'Dela Rosa St., Paseo de Roxas, Makati City'),
+        (0005,'Crash Dummies Inc.','Abandoned Factory N-67'),
+        (0006, 'Jollibee Foods Corporation', 'Ortigas Center, Pasig City'),
+        (0007, 'Psychological Resources Center, Inc.', 'Diliman, Quezon City'),
+        (0008, 'Philippine Airlines Head Office', 'Lucio K. Tan Jr. Center, Pasay City'),
+        (0009, 'WayneCorp', 'Makati City'),
+        (0010, 'LexCorp', 'Marikina City');
 /*!40000 ALTER TABLE `internship_branch_records` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -177,7 +209,7 @@ DROP TABLE IF EXISTS `internship_program_records`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `internship_program_records` (
   `internship_program_id` int(4) unsigned zerofill NOT NULL AUTO_INCREMENT,
-  `program_name` varchar(45) DEFAULT NULL,
+  `program_name` varchar(80) DEFAULT NULL,
   `field_id` int unsigned DEFAULT NULL,
   `branch_id` int unsigned DEFAULT NULL,
   `internship_start_date` date NOT NULL,
@@ -197,6 +229,17 @@ CREATE TABLE `internship_program_records` (
 
 LOCK TABLES `internship_program_records` WRITE;
 /*!40000 ALTER TABLE `internship_program_records` DISABLE KEYS */;
+INSERT INTO `internship_program_records`
+VALUES (0001,"Good Pizza, Great Pizza Marketing Internship", 0004, 0001, 2027-01-10,2027-02-10,2026-11-20,2026-12-20,2,'ACTIVE'),
+		(0002,"WayneCorp Computer Research Internship", 0001, 0009, 2027-03-01,2027-05-01,2026-12-01,2026-12-31,3,'ACTIVE'),
+        (0003,"Psychology Special Patient Examination Internship", 0005, 0007, 2027-01-15,2027-04-15,2026-11-10,2026-12-10,3,'ACTIVE'),
+        (0004,"WayneCorp Business Management Internship", 0004,0009,2026-12-01,2026-12-15,2026-11-07,2026-11-28,1,'ACTIVE'),
+        (0005,"Philippine Airines Market Research", 0004, 0008,2027-02-01,2027-04-1,2026-12-15,2027-01-15,4,'ACTIVE'),
+        (0006,"WayneCorp Financial and Economic Development Internship", 0002,0009,2027-02-12,2027-06-12,2026-11-25,2026-12-15,2,'ACTIVE'),
+        (0007,"LexCorp Advertising and Audience Outreach Internship", 0003,0010,2026-11-25,2026-12-05,2026-10-15,2026-10-30,2,'INACTIVE'),
+        (0008,"Jollibee Food Corporation Advertising and Audience Outreach Internship", 0003,0010,2027-01-25,2027-02-25,2026-11-30,2026-12-10,'ACTIVE'),
+        (0009,"Jollibee Food Corporation Business Strategies Internship", 0004,0010,2027-01-25,2027-02-25,2026-11-30,2026-12-10,'ACTIVE'),
+        (0010,"Crash Dummies Inc. Computer System Internship", 0001, 0005, 2027-01-10,2027-02-10,2026-12-01,2026-12-20, 'ACTIVE');
 /*!40000 ALTER TABLE `internship_program_records` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -327,11 +370,11 @@ DROP TABLE IF EXISTS `student_records`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `student_records` (
   `student_id` int(4) unsigned zerofill NOT NULL AUTO_INCREMENT,
-  `student_name` varchar(45) NOT NULL,
+  `student_name` varchar(70) NOT NULL,
   `degree_program_id` int unsigned DEFAULT NULL,
   `age` int unsigned NOT NULL,
-  `location` varchar(45) DEFAULT NULL,
-  `university` varchar(45) DEFAULT NULL,
+  `location` varchar(70) DEFAULT NULL,
+  `university` varchar(70) DEFAULT NULL,
   `year_level` int unsigned DEFAULT NULL,
   PRIMARY KEY (`student_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -343,6 +386,17 @@ CREATE TABLE `student_records` (
 
 LOCK TABLES `student_records` WRITE;
 /*!40000 ALTER TABLE `student_records` DISABLE KEYS */;
+INSERT INTO `student_records`
+VALUES (0001, "John Jones", 0003, 20, "Manila City", "De La Salle University", 2),
+		(0002, "Lucas Tan", 0010, 18, "Manila City", "De La Salle University", 1),
+        (0003, "Luisa Sta. Teresa", 0003, 19, "Quezon City", "Ateneo De Manila University", 2),
+        (0004, "Lorenzo Lopez", 0004, 18, "Quezon City", "Ateneo De Manila Univeristy", 1),
+        (0005, "Raymond Salvador", 0005, 20, "Quezon City", "University of the Philippines Diliman", 3),
+        (0006, "Alyssa Liu", 0010, 22, "Manila City", "University of Santo Tomas", 4),
+        (0007, "Nicollo Villarin", 0001, 19, "Manila City", "De La Salle University", 2),
+        (0008, "John Paul Ringo", 0002, 18, "Makati City", "Mapua University", 1),
+        (0009, "Asa Mitaka", 0006, 19, "Taguig City", "University of the Philipines Bonifacio Global City", 2),
+        (0010, "Jonathan Joestar", 0008, 22, "Quezon City", "Ateneo De Manila University", 4);
 /*!40000 ALTER TABLE `student_records` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
