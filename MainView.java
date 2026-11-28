@@ -13,8 +13,8 @@ public class MainView extends JFrame {
     private JPanel mainPanel;
     private HashMap<String, JPanel> panels;
     private String curScreenName;
-    private static final int WIDTH = 1056;
-    private static final int HEIGHT = 1056;
+    private static final int WIDTH = 1001;
+    private static final int HEIGHT = 657;
 
     public MainView(String name) {
         super(name);
@@ -28,7 +28,8 @@ public class MainView extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(WIDTH, HEIGHT);
         setLocationRelativeTo(null);
-        setResizable(false);
+        setResizable(true);
+        requestFocusInWindow();
     }
 
     public void addScreen(String name, JPanel screen) {
