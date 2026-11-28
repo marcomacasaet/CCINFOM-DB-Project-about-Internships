@@ -161,7 +161,7 @@ LOCK TABLES `internship_branch_records` WRITE;
 /*!40000 ALTER TABLE `internship_branch_records` DISABLE KEYS */;
 INSERT INTO `internship_branch_records` 
 VALUES (0001,'Good Pizza, Great Pizza','Someplace Sometown'),
-		(0002,'Ultimate Talent Execution Branch','Eden\'s Garden Academy'),
+		(0002,'Ultimate Talent Execution Branch','Eden''s Garden Academy'),
         (0003, 'Accenture, Inc. Makati Branch', 'MSE Building, Ayala Avenue, Makati City'),
         (0004, 'Bank of the Philippine Islands Head Office', 'Dela Rosa St., Paseo de Roxas, Makati City'),
         (0005,'Crash Dummies Inc.','Abandoned Factory N-67'),
